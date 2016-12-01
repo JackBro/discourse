@@ -89,7 +89,9 @@ function initializePolls(api) {
       );
 
       $poll.replaceWith($div);
-      Em.run.schedule('afterRender', () => pollComponent.renderer.appendTo(pollComponent, $div[0]));
+      Ember.run.schedule('afterRender', () => {
+        pollComponent.renderer.appendTo(pollComponent, $div[0]);
+      });
       postPollViews[pollId] = pollComponent;
     });
 
