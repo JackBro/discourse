@@ -67,7 +67,8 @@ class RouteNode {
       if (paths.length > 1) {
         paths.filter(p => p !== this.opts.path).forEach(path => {
           const newOpts = jQuery.extend({}, this.opts, { path });
-          router.route(this.name, newOpts, builder);
+          console.log(`warning: we can't have duplicate route names anymore`, newOpts);
+          // router.route(this.name, newOpts, builder);
         });
       }
     }
